@@ -5,7 +5,7 @@
 
 include $(dir $(lastword $(MAKEFILE_LIST)))../../build/bootstrap.make
 
-cxx_tun   := database.cxx transaction.cxx transaction-impl.cxx
+cxx_tun   := exceptions.cxx database.cxx transaction.cxx transaction-impl.cxx
 cxx_obj   := $(addprefix $(out_base)/,$(cxx_tun:.cxx=.o))
 cxx_od    := $(cxx_obj:.o=.o.d)
 
