@@ -21,9 +21,6 @@ namespace odb
 
       virtual transaction_impl*
       begin_transaction ();
-
-      virtual transaction_impl*
-      begin_transaction (session&);
     };
   }
 }

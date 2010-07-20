@@ -23,13 +23,6 @@ namespace odb
     }
 
     transaction_impl::
-    transaction_impl (database_type& db, session_type& s)
-        : odb::transaction_impl (db, s), finilized_ (false)
-    {
-      cout << "begin transaction" << endl;
-    }
-
-    transaction_impl::
     ~transaction_impl ()
     {
       if (!finilized_)

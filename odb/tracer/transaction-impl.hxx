@@ -24,7 +24,6 @@ namespace odb
       typedef tracer::database database_type;
 
       transaction_impl (database_type&);
-      transaction_impl (database_type&, session_type&);
 
       virtual
       ~transaction_impl ();
