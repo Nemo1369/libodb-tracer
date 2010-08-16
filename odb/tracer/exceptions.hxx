@@ -19,7 +19,7 @@ namespace odb
       database_exception (const std::string&);
       ~database_exception () throw ();
 
-      virtual char const*
+      virtual const char*
       what () const throw ();
 
     private:
