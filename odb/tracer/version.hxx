@@ -6,6 +6,8 @@
 #ifndef ODB_TRACER_VERSION_HXX
 #define ODB_TRACER_VERSION_HXX
 
+#include <odb/pre.hxx>
+
 #include <odb/version.hxx>
 
 // Version format is AABBCCDD where
@@ -36,5 +38,7 @@
 //
 #define LIBODB_TRACER_VERSION     999901
 #define LIBODB_TRACER_VERSION_STR "1.0.0.a1"
+
+#include <odb/post.hxx>
 
 #endif // ODB_TRACER_VERSION_HXX

@@ -6,7 +6,11 @@
 #ifndef ODB_TRACER_TRANSACTION_IMPL_HXX
 #define ODB_TRACER_TRANSACTION_IMPL_HXX
 
+#include <odb/pre.hxx>
+
 #include <odb/transaction.hxx>
+
+#include <odb/tracer/details/export.hxx>
 
 namespace odb
 {
@@ -15,7 +19,7 @@ namespace odb
     class database;
     class transaction;
 
-    class transaction_impl: public odb::transaction_impl
+    class LIBODB_TRACER_EXPORT transaction_impl: public odb::transaction_impl
     {
     protected:
       friend class database;
@@ -39,5 +43,7 @@ namespace odb
     };
   }
 }
+
+#include <odb/post.hxx>
 
 #endif // ODB_TRACER_TRANSACTION_IMPL_HXX

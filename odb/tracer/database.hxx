@@ -6,14 +6,18 @@
 #ifndef ODB_TRACER_DATABASE_HXX
 #define ODB_TRACER_DATABASE_HXX
 
+#include <odb/pre.hxx>
+
 #include <odb/database.hxx>
 #include <odb/tracer/transaction-impl.hxx>
+
+#include <odb/tracer/details/export.hxx>
 
 namespace odb
 {
   namespace tracer
   {
-    class database: public odb::database
+    class LIBODB_TRACER_EXPORT database: public odb::database
     {
     public:
       virtual
@@ -24,5 +28,7 @@ namespace odb
     };
   }
 }
+
+#include <odb/post.hxx>
 
 #endif // ODB_TRACER_DATABASE_HXX

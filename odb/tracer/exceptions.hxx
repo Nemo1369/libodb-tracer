@@ -6,15 +6,19 @@
 #ifndef ODB_TRACER_EXCEPTIONS_HXX
 #define ODB_TRACER_EXCEPTIONS_HXX
 
+#include <odb/pre.hxx>
+
 #include <string>
 
 #include <odb/exceptions.hxx>
+
+#include <odb/tracer/details/export.hxx>
 
 namespace odb
 {
   namespace tracer
   {
-    struct database_exception: odb::database_exception
+    struct LIBODB_TRACER_EXPORT database_exception: odb::database_exception
     {
       database_exception (const std::string&);
       ~database_exception () throw ();
@@ -27,5 +31,7 @@ namespace odb
     };
   }
 }
+
+#include <odb/post.hxx>
 
 #endif // ODB_TRACER_EXCEPTIONS_HXX
