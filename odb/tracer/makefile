@@ -49,7 +49,7 @@ $(dist): export interface_version = $(shell sed -e \
 's/^\([0-9]*\.[0-9]*\).*/\1/' $(src_root)/version)
 
 $(dist):
-	$(call dist-data,$(sources) $(headers))
+	$(call dist-data,$(sources) $(headers) details/config.h.in)
 	$(call meta-vc9proj,$(src_base)/libodb-tracer-vc9.vcproj)
 	$(call meta-vc10proj,$(src_base)/libodb-tracer-vc10.vcxproj)
 	$(call meta-automake)

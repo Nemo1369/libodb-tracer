@@ -32,6 +32,11 @@ THREADS
 #
 LIBODB([],[AC_MSG_ERROR([libodb is not found; consider using --with-libodb=DIR])])
 
+# Define LIBODB_TRACER_STATIC_LIB if we are build static library on certain
+# platforms.
+#
+STATIC_LIB([LIBODB_TRACER_STATIC_LIB], [Static library interface.])
+
 # Allow the user to specify the pkgconfig directory.
 #
 PKGCONFIG
@@ -42,7 +47,7 @@ DISABLE_RPATH
 
 # Output.
 #
-AC_CONFIG_HEADERS([odb/tracer/config.h])
+AC_CONFIG_HEADERS([odb/tracer/config.h odb/tracer/details/config.h])
 AC_CONFIG_FILES([
   __path__(config_files)
 ])

@@ -8,14 +8,28 @@
 
 #include <odb/pre.hxx>
 
+#include <odb/tracer/details/config.hxx>
+
 #ifdef LIBODB_TRACER_STATIC_LIB
 #  define LIBODB_TRACER_EXPORT
 #else
 #  ifdef _WIN32
-#    ifdef LIBODB_TRACER_DYNAMIC_LIB
-#      define LIBODB_TRACER_EXPORT __declspec(dllexport)
+#    ifdef _MSC_VER
+#      ifdef LIBODB_TRACER_DYNAMIC_LIB
+#        define LIBODB_TRACER_EXPORT __declspec(dllexport)
+#      else
+#        define LIBODB_TRACER_EXPORT __declspec(dllimport)
+#      endif
 #    else
-#      define LIBODB_TRACER_EXPORT __declspec(dllimport)
+#      ifdef LIBODB_TRACER_DYNAMIC_LIB
+#        ifdef DLL_EXPORT
+#          define LIBODB_TRACER_EXPORT __declspec(dllexport)
+#        else
+#          define LIBODB_TRACER_EXPORT
+#        endif
+#      else
+#        define LIBODB_TRACER_EXPORT __declspec(dllimport)
+#      endif
 #    endif
 #  else
 #    define LIBODB_TRACER_EXPORT

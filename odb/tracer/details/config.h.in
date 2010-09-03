@@ -1,0 +1,14 @@
+/* file      : odb/tracer/details/config.h.in
+ * author    : Boris Kolpackov <boris@codesynthesis.com>
+ * copyright : Copyright (c) 2009-2010 Code Synthesis Tools CC
+ * license   : GNU GPL v2; see accompanying LICENSE file
+ */
+
+/* This file is automatically processed by configure. */
+
+#ifndef ODB_TRACER_DETAILS_CONFIG_H
+#define ODB_TRACER_DETAILS_CONFIG_H
+
+#undef LIBODB_TRACER_STATIC_LIB
+
+#endif /* ODB_TRACER_DETAILS_CONFIG_H */
