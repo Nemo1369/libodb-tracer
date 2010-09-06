@@ -8,14 +8,11 @@
 
 // no pre
 
-#ifdef HAVE_CONFIG_H
+#ifdef _MSC_VER
+#elif defined(ODB_COMPILER)
+#  error libodb-tracer header included in odb-compiled header
+#else
 #  include <odb/tracer/details/config.h>
-#endif
-
-#ifndef LIBODB_TRACER_INCLUDE_SHORT
-  #ifdef _WIN32
-    #define LIBODB_TRACER_INCLUDE_SHORT 1
-  #endif
 #endif
 
 // no post
