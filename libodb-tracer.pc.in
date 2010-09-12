@@ -9,7 +9,7 @@ libdir=@libdir@
 includedir=@includedir@
 
 Name: libodb-tracer
-Description: Object persistence compiler for C++, tracer runtime
+Description: Object-relational mapping (ORM) system for C++, tracer runtime library
 URL: http://www.codesynthesis.com/products/odb/
 Version: @VERSION@
 Libs: -L${libdir} -lodb-tracer
