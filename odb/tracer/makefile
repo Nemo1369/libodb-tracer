@@ -32,8 +32,6 @@ $(odb_tracer.l.cpp-options): $(odb.l.cpp-options)
 
 $(cxx_obj) $(cxx_od): $(odb_tracer.l.cpp-options) $(out_base)/details/config.h
 
-$(call include-dep,$(cxx_od))
-
 $(out_base)/details/config.h:
 	@echo '// file      : odb/tracer/details/config.h'               >$@
 	@echo '// author    : automatically generated'                  >>$@
@@ -43,6 +41,8 @@ $(out_base)/details/config.h:
 	@echo ''                                                        >>$@
 	@echo ''                                                        >>$@
 	@echo '#endif // ODB_TRACER_DETAILS_CONFIG_H'                   >>$@
+
+$(call include-dep,$(cxx_od),$(cxx_obj),$(out_base)/details/config.h)
 
 # Convenience alias for default target.
 #
@@ -60,8 +60,8 @@ $(dist): export interface_version = $(shell sed -e \
 
 $(dist):
 	$(call dist-data,$(sources) $(headers) details/config.h.in)
-	$(call meta-vc9proj,$(src_base)/libodb-tracer-vc9.vcproj)
-	$(call meta-vc10proj,$(src_base)/libodb-tracer-vc10.vcxproj)
+	$(call meta-vc9proj,libodb-tracer-vc9.vcproj)
+	$(call meta-vc10proj,libodb-tracer-vc10.vcxproj)
 	$(call meta-automake)
 
 # Clean.
