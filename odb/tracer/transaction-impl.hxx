@@ -39,7 +39,7 @@ namespace odb
       rollback ();
 
     private:
-      bool finilized_;
+      bool finalized_;
     };
   }
 }

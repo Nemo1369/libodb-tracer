@@ -17,7 +17,7 @@ namespace odb
   {
     transaction_impl::
     transaction_impl (database_type& db)
-        : odb::transaction_impl (db), finilized_ (false)
+        : odb::transaction_impl (db), finalized_ (false)
     {
       cout << "begin transaction" << endl;
     }
@@ -25,7 +25,7 @@ namespace odb
     transaction_impl::
     ~transaction_impl ()
     {
-      if (!finilized_)
+      if (!finalized_)
         cout << "end transaction without commit/rollback" << endl;
     }
 
@@ -33,14 +33,14 @@ namespace odb
     commit ()
     {
       cout << "commit transaction" << endl;
-      finilized_ = true;
+      finalized_ = true;
     }
 
     void transaction_impl::
     rollback ()
     {
       cout << "rollback transaction" << endl;
-      finilized_ = true;
+      finalized_ = true;
     }
   }
 }
