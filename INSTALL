@@ -37,7 +37,7 @@ to specify its location, for example:
 
 As another example, the following configure command only builds shared
 libraries, uses the specified C++ compiler, and compiles with optimization
-and without the debug information:
+and without debug information:
 
 ./configure --disable-static CXX=g++-4.5 CXXFLAGS=-O3
 
@@ -45,7 +45,7 @@ Once configuration is complete, run make to build libodb-tracer:
 
 make
 
-Once the build completes successfully, you can install the libodb-tracer
+Once the build is completed successfully, you can install the libodb-tracer
 headers and libraries using the install target (you may need to do this
 step as root depending on the installation directory):
 
@@ -76,8 +76,8 @@ The resulting 32-bit DLLs and import libraries are placed into the
 libodb-tracer\bin\ and libodb-tracer\lib\ directories, respectively.
 Similarly, the 64-bit DLLs and import libraries are placed into
 libodb-tracer\bin64\ and libodb-tracer\lib64\. The Release versions of
-import libraries are named odb-tracer.lib and the Debug versions are
-named odb-tracer-d.lib.
+the import libraries are named odb-tracer.lib and the Debug versions
+are named odb-tracer-d.lib.
 
 To configure Visual Studio to automatically locate the libodb-tracer
 headers, DLLs, and import libraries, add the following paths to your
