@@ -16,7 +16,7 @@ namespace odb
     }
 
     transaction_impl* database::
-    begin_transaction ()
+    begin ()
     {
       if (odb::transaction::has_current ())
         throw already_in_transaction ();

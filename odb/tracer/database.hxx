@@ -24,7 +24,7 @@ namespace odb
       ~database ();
 
       virtual transaction_impl*
-      begin_transaction ();
+      begin ();
     };
   }
 }
