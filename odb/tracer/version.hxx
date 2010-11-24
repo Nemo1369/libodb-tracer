@@ -29,15 +29,15 @@
 
 // Check that we have compatible ODB version.
 //
-#if ODB_VERSION != 10001
+#if ODB_VERSION != 10002
 #  error incompatible odb interface version detected
 #endif
 
 // libodb-tracer version: odb interface version plus the bugfix
 // version.
 //
-#define LIBODB_TRACER_VERSION     1009901
-#define LIBODB_TRACER_VERSION_STR "1.1.0.a1"
+#define LIBODB_TRACER_VERSION     1009902
+#define LIBODB_TRACER_VERSION_STR "1.1.0.a2"
 
 #include <odb/post.hxx>
 
