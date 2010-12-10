@@ -33,14 +33,15 @@ $(odb_tracer.l.cpp-options): $(odb.l.cpp-options)
 $(cxx_obj) $(cxx_od): $(odb_tracer.l.cpp-options) $(out_base)/details/config.h
 
 $(out_base)/details/config.h:
-	@echo '// file      : odb/tracer/details/config.h'               >$@
-	@echo '// author    : automatically generated'                  >>$@
+	@echo '/* file      : odb/tracer/details/config.h'               >$@
+	@echo ' * author    : automatically generated'                  >>$@
+	@echo ' */'                                                     >>$@
 	@echo ''                                                        >>$@
 	@echo '#ifndef ODB_TRACER_DETAILS_CONFIG_H'                     >>$@
 	@echo '#define ODB_TRACER_DETAILS_CONFIG_H'                     >>$@
 	@echo ''                                                        >>$@
 	@echo ''                                                        >>$@
-	@echo '#endif // ODB_TRACER_DETAILS_CONFIG_H'                   >>$@
+	@echo '#endif /* ODB_TRACER_DETAILS_CONFIG_H */'                >>$@
 
 $(call include-dep,$(cxx_od),$(cxx_obj),$(out_base)/details/config.h)
 
