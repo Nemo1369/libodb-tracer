@@ -23,6 +23,9 @@ namespace odb
       virtual
       ~database ();
 
+      virtual unsigned long long
+      execute (const char* statement, std::size_t length);
+
       virtual transaction_impl*
       begin ();
     };

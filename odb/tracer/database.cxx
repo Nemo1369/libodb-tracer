@@ -15,6 +15,12 @@ namespace odb
     {
     }
 
+    unsigned long long database::
+    execute (const char*, std::size_t)
+    {
+      return 0;
+    }
+
     transaction_impl* database::
     begin ()
     {
