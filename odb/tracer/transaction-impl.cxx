@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include <odb/tracer/database.hxx>
+#include <odb/tracer/connection.hxx>
 #include <odb/tracer/transaction-impl.hxx>
 
 using std::cout;
@@ -16,8 +17,10 @@ namespace odb
   namespace tracer
   {
     transaction_impl::
-    transaction_impl (database_type& db)
-        : odb::transaction_impl (db), finalized_ (false)
+    transaction_impl (connection_ptr c)
+        : odb::transaction_impl (c->database (), *c),
+          finalized_ (false),
+          connection_ (c)
     {
       cout << "begin transaction" << endl;
     }

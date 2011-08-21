@@ -3,8 +3,8 @@
 // copyright : Copyright (c) 2009-2011 Code Synthesis Tools CC
 // license   : GNU GPL v2; see accompanying LICENSE file
 
-#include <odb/transaction.hxx>
 #include <odb/tracer/database.hxx>
+#include <odb/tracer/connection.hxx>
 
 namespace odb
 {
@@ -15,19 +15,26 @@ namespace odb
     {
     }
 
-    unsigned long long database::
-    execute (const char*, std::size_t)
-    {
-      return 0;
-    }
-
     transaction_impl* database::
     begin ()
     {
-      if (odb::transaction::has_current ())
-        throw already_in_transaction ();
+      return connection ()->begin ();
+    }
 
-      return new transaction_impl (*this);
+    inline connection_ptr database::
+    connection ()
+    {
+      // Go through the virtual connection_() function instead of
+      // directly to allow overriding.
+      //
+      return connection_ptr (
+        static_cast<tracer::connection*> (connection_ ()));
+    }
+
+    odb::connection* database::
+    connection_ ()
+    {
+      return new (details::shared) connection_type (*this);
     }
   }
 }

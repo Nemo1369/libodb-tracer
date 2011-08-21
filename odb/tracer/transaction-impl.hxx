@@ -9,25 +9,24 @@
 #include <odb/pre.hxx>
 
 #include <odb/transaction.hxx>
+#include <odb/details/shared-ptr.hxx>
 
+#include <odb/tracer/forward.hxx>
 #include <odb/tracer/details/export.hxx>
 
 namespace odb
 {
   namespace tracer
   {
-    class database;
-    class transaction;
-
     class LIBODB_TRACER_EXPORT transaction_impl: public odb::transaction_impl
     {
     protected:
-      friend class database;
+      friend class connection;
       friend class transaction;
 
       typedef tracer::database database_type;
 
-      transaction_impl (database_type&);
+      transaction_impl (connection_ptr);
 
       virtual
       ~transaction_impl ();
@@ -40,6 +39,7 @@ namespace odb
 
     private:
       bool finalized_;
+      connection_ptr connection_;
     };
   }
 }

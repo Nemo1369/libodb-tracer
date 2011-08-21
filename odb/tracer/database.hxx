@@ -9,8 +9,9 @@
 #include <odb/pre.hxx>
 
 #include <odb/database.hxx>
-#include <odb/tracer/transaction-impl.hxx>
 
+#include <odb/tracer/connection.hxx>
+#include <odb/tracer/transaction-impl.hxx>
 #include <odb/tracer/details/export.hxx>
 
 namespace odb
@@ -20,14 +21,20 @@ namespace odb
     class LIBODB_TRACER_EXPORT database: public odb::database
     {
     public:
+      typedef tracer::connection connection_type;
+
       virtual
       ~database ();
 
-      virtual unsigned long long
-      execute (const char* statement, std::size_t length);
-
-      virtual transaction_impl*
+      transaction_impl*
       begin ();
+
+      connection_ptr
+      connection ();
+
+    protected:
+      virtual odb::connection*
+      connection_ ();
     };
   }
 }

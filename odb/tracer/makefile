@@ -5,7 +5,12 @@
 
 include $(dir $(lastword $(MAKEFILE_LIST)))../../build/bootstrap.make
 
-cxx := exceptions.cxx database.cxx transaction.cxx transaction-impl.cxx
+cxx :=               \
+exceptions.cxx       \
+database.cxx         \
+connection.cxx       \
+transaction.cxx      \
+transaction-impl.cxx
 
 cxx_tun := $(cxx)
 cxx_obj := $(addprefix $(out_base)/,$(cxx_tun:.cxx=.o))
