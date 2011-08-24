@@ -31,5 +31,11 @@ namespace odb
       return static_cast<transaction_impl&> (
         odb::transaction::implementation ());
     }
+
+    inline void transaction::
+    current (transaction& t)
+    {
+      odb::transaction::current (t);
+    }
   }
 }

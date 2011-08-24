@@ -18,10 +18,10 @@ namespace odb
     transaction_impl* database::
     begin ()
     {
-      return connection ()->begin ();
+      return new transaction_impl (*this);
     }
 
-    inline connection_ptr database::
+    connection_ptr database::
     connection ()
     {
       // Go through the virtual connection_() function instead of

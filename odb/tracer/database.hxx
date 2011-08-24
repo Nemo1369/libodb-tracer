@@ -26,7 +26,7 @@ namespace odb
       virtual
       ~database ();
 
-      transaction_impl*
+      virtual transaction_impl*
       begin ();
 
       connection_ptr

@@ -20,16 +20,17 @@ namespace odb
   {
     class LIBODB_TRACER_EXPORT transaction_impl: public odb::transaction_impl
     {
-    protected:
-      friend class connection;
-      friend class transaction;
-
+    public:
       typedef tracer::database database_type;
 
+      transaction_impl (database_type&);
       transaction_impl (connection_ptr);
 
       virtual
       ~transaction_impl ();
+
+      virtual void
+      start ();
 
       virtual void
       commit ();
